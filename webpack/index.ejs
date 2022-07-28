@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="col s12">
+            <h1>Dices</h1>
+        </div>
+        <div class="row">
+            <div class="col s3">
+                <div class="col s12">
+                    <div class="file-upload btn waves-effect waves-light">
+                        <span>Import picture</span>
+                        <i class="material-icons right">cloud_upload</i>
+                        <input type="file" name="FileAttachment" id="FileAttachment" class="upload"
+                            accept="image/png, image/jpeg" />
+                    </div>
+                    <input type="text" id="fileuploadurl" readonly placeholder="Maximum file size is 1GB">
+                </div>
+                <div class="col s12">
+                    <form action="#">
+                        <p class="range-field">
+                            <input type="range" id="maxSize" min="10" max="300" />
+                        </p>
+                        <span class="thumb"></span>
+                    </form>
+                </div>
+                <div class="col s12">
+                    <p>Width : <span id="widthSpan"></span> </p>
+                    <p>Height : <span id="heightSpan"></span> </p>
+                    <p>Total dices : <span id="totalDices"></span></p>
+                </div>
+                <div class="col s12">
+                    <button class="btn waves-effect waves-light" disabled id="downloadBtn">
+                        <span>Download</span>
+                        <i class="material-icons right">cloud_download</i>
+                    </button>
+                </div>
+            </div>
+            <div class="col s9 center-align">
+                <div class="row">
+                    <div class="col s12">
+                        <canvas id="baseCanvas" />
+                    </div>
+                </div>
+                <div class="row">
+                    <img id="previewIMG" />
+                </div>
+            </div>
+        </div>
+        <canvas style="display:  none;" id="downloadCanvas"></canvas>
+    </div>
+</body>
+
+</html>
